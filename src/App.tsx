@@ -1,7 +1,7 @@
 import { curatedRaces, FOOTER_NOTICE, UNANNOUNCED, VERIFIED_ON } from "@/data/curated";
 import scrapedFile from "@/data/scraped.json";
 import type { Race, ScrapedFile } from "@/data/types";
-import { DecemberCalendar } from "@/components/DecemberCalendar";
+import { ScheduleCalendar } from "@/components/ScheduleCalendar";
 import { NewAnnouncements } from "@/components/NewAnnouncements";
 import { PlannedRace } from "@/components/PlannedRace";
 import { RaceBoard } from "@/components/RaceBoard";
@@ -60,7 +60,7 @@ export default function App() {
 
       <main className="mx-auto grid max-w-4xl gap-6 px-4 py-6 sm:px-6 sm:py-8">
         <PlannedRace now={now} />
-        <DecemberCalendar />
+        <ScheduleCalendar races={races} now={now} />
         <NewAnnouncements races={races} now={now} />
         <RaceBoard races={races} now={now} />
       </main>

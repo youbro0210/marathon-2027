@@ -102,7 +102,9 @@ export function countdownLabel(race: Race, now: Date, filter: DistanceFilter = "
   return "접수 마감";
 }
 
-function seoulParts(iso: string): { year: number; month: number; day: number; hour: number; minute: number } {
+export type SeoulParts = { year: number; month: number; day: number; hour: number; minute: number };
+
+function seoulParts(iso: string): SeoulParts {
   const time = Date.parse(iso) + SEOUL;
   const date = new Date(time);
   return {
@@ -112,6 +114,24 @@ function seoulParts(iso: string): { year: number; month: number; day: number; ho
     hour: date.getUTCHours(),
     minute: date.getUTCMinutes(),
   };
+}
+
+export function isoDate(year: number, month: number, day: number): string {
+  const pad = (value: number) => String(value).padStart(2, "0");
+  return `${year}-${pad(month)}-${pad(day)}`;
+}
+
+/** 달력에 찍을 접수 시작/마감일. 마감이 자정(일 단위)이면 전날 23:59로 본다. */
+export function windowBoundParts(iso: string, precision: Precision | undefined, edge: "open" | "close"): SeoulParts & { ymd: string } {
+  const parts = seoulParts(iso);
+  if (edge === "close" && precision !== "minute" && parts.hour === 0 && parts.minute === 0) {
+    const previous = new Date(Date.parse(iso) - 1000 + SEOUL);
+    const year = previous.getUTCFullYear();
+    const month = previous.getUTCMonth() + 1;
+    const day = previous.getUTCDate();
+    return { year, month, day, hour: 23, minute: 59, ymd: isoDate(year, month, day) };
+  }
+  return { ...parts, ymd: isoDate(parts.year, parts.month, parts.day) };
 }
 
 function weekdayOf(year: number, month: number, day: number): string {
