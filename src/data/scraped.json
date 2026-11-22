@@ -1,12 +1,12 @@
 {
-  "collectedAt": "2026-11-22T07:12:13.788Z",
+  "collectedAt": "2026-11-22T19:11:42.695Z",
   "sources": [
     {
       "name": "러닝온",
       "url": "https://runningon.co.kr/rss.xml",
       "ok": true,
       "races": 38,
-      "note": "RSS 38건, 공식 링크 35건"
+      "note": "RSS 38건, 공식 링크 36건"
     },
     {
       "name": "런파인더",
@@ -40,58 +40,6 @@
   ],
   "races": [
     {
-      "id": "feed-runningon-co-kr-races-peace-forest-marathon-2026",
-      "name": "2026 평화의숲 마라톤",
-      "date": "2026-11-22",
-      "weekday": "일",
-      "place": "서울 상암 월드컵공원 평화광장",
-      "distances": [
-        "10km",
-        "5km"
-      ],
-      "window": {
-        "openAt": "2026-08-03T00:00:00+09:00",
-        "closeAt": "2026-11-16T00:00:00+09:00",
-        "openPrecision": "day",
-        "closePrecision": "day"
-      },
-      "fees": "50,000원부터",
-      "note": "접수 마감",
-      "url": "https://peace-run.kr/",
-      "listingUrl": "https://runningon.co.kr/races/peace-forest-marathon-2026",
-      "sourceName": "러닝온",
-      "curated": false,
-      "firstSeen": "2026-08-03",
-      "lastChecked": "2026-11-22",
-      "official": true
-    },
-    {
-      "id": "feed-ningon-co-kr-races-seoul-eoksaepul-marathon-2026",
-      "name": "2026 서울 억새풀 마라톤대회",
-      "date": "2026-11-22",
-      "weekday": "일",
-      "place": "서울 영롱이 억새구장(영등포, 안양천)",
-      "distances": [
-        "하프",
-        "10km",
-        "5km"
-      ],
-      "window": {
-        "openAt": "2026-08-24T00:00:00+09:00",
-        "closeAt": null,
-        "openPrecision": "day"
-      },
-      "fees": "40,000원부터",
-      "note": "정원 마감",
-      "url": "https://ssrun.kr",
-      "listingUrl": "https://runningon.co.kr/races/seoul-eoksaepul-marathon-2026",
-      "sourceName": "러닝온",
-      "curated": false,
-      "firstSeen": "2026-08-24",
-      "lastChecked": "2026-11-22",
-      "official": true
-    },
-    {
       "id": "feed-gon-co-kr-races-ahn-junggeun-peace-marathon-2026",
       "name": "제14회 안중근 평화 마라톤 대회",
       "date": "2026-11-29",
@@ -109,13 +57,13 @@
         "closePrecision": "day"
       },
       "fees": "50,000원부터",
-      "note": "오늘 마감",
+      "note": "접수 마감",
       "url": "https://ajgrun.kr",
       "listingUrl": "https://runningon.co.kr/races/ahn-junggeun-peace-marathon-2026",
       "sourceName": "러닝온",
       "curated": false,
       "firstSeen": "2026-07-31",
-      "lastChecked": "2026-11-22",
+      "lastChecked": "2026-11-23",
       "official": true
     },
     {
@@ -141,7 +89,7 @@
       "sourceName": "러닝온",
       "curated": false,
       "firstSeen": "2026-08-17",
-      "lastChecked": "2026-11-22",
+      "lastChecked": "2026-11-23",
       "official": true
     },
     {
@@ -168,7 +116,7 @@
       "sourceName": "러닝온",
       "curated": false,
       "firstSeen": "2026-08-14",
-      "lastChecked": "2026-11-22",
+      "lastChecked": "2026-11-23",
       "official": true
     },
     {
@@ -195,7 +143,7 @@
       "sourceName": "러닝온",
       "curated": false,
       "firstSeen": "2026-07-24",
-      "lastChecked": "2026-11-22",
+      "lastChecked": "2026-11-23",
       "official": true
     },
     {
@@ -221,33 +169,8 @@
       "sourceName": "러닝온",
       "curated": false,
       "firstSeen": "2026-03-22",
-      "lastChecked": "2026-11-22",
+      "lastChecked": "2026-11-23",
       "official": false
-    },
-    {
-      "id": "feed-https-runningon-co-kr-races-zeiss-smilerace-2026",
-      "name": "자이스 스마일 레이스",
-      "date": "2026-11-22",
-      "weekday": "일",
-      "place": "서울 여의도공원 문화의 마당",
-      "distances": [
-        "10km",
-        "5km"
-      ],
-      "window": {
-        "openAt": "2026-11-08T00:00:00+09:00",
-        "closeAt": null,
-        "openPrecision": "day"
-      },
-      "fees": "55,000원부터",
-      "note": "접수 마감",
-      "url": "https://zeiss-smilerace.kr/",
-      "listingUrl": "https://runningon.co.kr/races/zeiss-smilerace-2026",
-      "sourceName": "러닝온",
-      "curated": false,
-      "firstSeen": "2026-11-08",
-      "lastChecked": "2026-11-22",
-      "official": true
     },
     {
       "id": "feed-https-runningon-co-kr-races-wyd-peace-run-2026",
@@ -272,7 +195,7 @@
       "sourceName": "러닝온",
       "curated": false,
       "firstSeen": "2026-08-28",
-      "lastChecked": "2026-11-22",
+      "lastChecked": "2026-11-23",
       "official": true
     },
     {
@@ -292,13 +215,13 @@
         "closePrecision": "day"
       },
       "fees": "19,000원부터",
-      "note": "마감 D-5",
+      "note": "마감 D-4",
       "url": "https://runwithus.co.kr/",
       "listingUrl": "https://runningon.co.kr/races/cheonan-independence-hall-marathon-2026",
       "sourceName": "러닝온",
       "curated": false,
       "firstSeen": "2026-07-31",
-      "lastChecked": "2026-11-22",
+      "lastChecked": "2026-11-23",
       "official": true
     },
     {
@@ -324,7 +247,7 @@
       "sourceName": "러닝온",
       "curated": false,
       "firstSeen": "2026-09-11",
-      "lastChecked": "2026-11-22",
+      "lastChecked": "2026-11-23",
       "official": true
     },
     {
@@ -349,7 +272,7 @@
       "sourceName": "러닝온",
       "curated": false,
       "firstSeen": "2026-10-26",
-      "lastChecked": "2026-11-22",
+      "lastChecked": "2026-11-23",
       "official": true
     },
     {
@@ -369,13 +292,13 @@
         "closePrecision": "day"
       },
       "fees": "20,000원부터",
-      "note": "마감 D-1",
+      "note": "오늘 마감",
       "url": "https://ryugwansun.co.kr/",
       "listingUrl": "https://runningon.co.kr/races/yugwansun-peace-marathon-2026",
       "sourceName": "러닝온",
       "curated": false,
       "firstSeen": "2026-11-06",
-      "lastChecked": "2026-11-22",
+      "lastChecked": "2026-11-23",
       "official": true
     },
     {
@@ -394,13 +317,13 @@
         "closePrecision": "day"
       },
       "fees": "20,000원부터",
-      "note": "마감 D-6",
+      "note": "마감 D-5",
       "url": "https://yc-garlicrun.netlify.app/",
       "listingUrl": "https://runningon.co.kr/races/yeongcheon-garlic-run-2026",
       "sourceName": "러닝온",
       "curated": false,
       "firstSeen": "2026-10-28",
-      "lastChecked": "2026-11-22",
+      "lastChecked": "2026-11-23",
       "official": true
     },
     {
@@ -426,7 +349,7 @@
       "sourceName": "러닝온",
       "curated": false,
       "firstSeen": "2026-10-01",
-      "lastChecked": "2026-11-22",
+      "lastChecked": "2026-11-23",
       "official": true
     },
     {
@@ -446,13 +369,13 @@
         "closePrecision": "day"
       },
       "fees": "45,000원부터",
-      "note": "오늘 마감",
+      "note": "접수 마감",
       "url": "https://www.youthrun.co.kr/",
       "listingUrl": "https://runningon.co.kr/races/youth-run-2026",
       "sourceName": "러닝온",
       "curated": false,
       "firstSeen": "2026-09-09",
-      "lastChecked": "2026-11-22",
+      "lastChecked": "2026-11-23",
       "official": true
     },
     {
@@ -479,110 +402,8 @@
       "sourceName": "러닝온",
       "curated": false,
       "firstSeen": "2026-10-20",
-      "lastChecked": "2026-11-22",
+      "lastChecked": "2026-11-23",
       "official": true
-    },
-    {
-      "id": "feed-ttps-runningon-co-kr-races-incheon-marathon-2026",
-      "name": "2026 인천마라톤",
-      "date": "2026-11-22",
-      "weekday": "일",
-      "place": "인천 인천아시아드주경기장",
-      "distances": [
-        "풀",
-        "10km",
-        "5km"
-      ],
-      "window": {
-        "openAt": "2026-09-07T00:00:00+09:00",
-        "closeAt": null,
-        "openPrecision": "day"
-      },
-      "fees": "30,000원부터",
-      "note": "정원 마감",
-      "url": "https://incheonmarathon.or.kr",
-      "listingUrl": "https://runningon.co.kr/races/incheon-marathon-2026",
-      "sourceName": "러닝온",
-      "curated": false,
-      "firstSeen": "2026-09-07",
-      "lastChecked": "2026-11-22",
-      "official": true
-    },
-    {
-      "id": "feed-https-runningon-co-kr-races-planet-run-2026",
-      "name": "2026 더 플래닛 런",
-      "date": "2026-11-22",
-      "weekday": "일",
-      "place": "경기 고양종합운동장",
-      "distances": [
-        "하프",
-        "10km",
-        "5km"
-      ],
-      "window": {
-        "openAt": "2026-08-01T00:00:00+09:00",
-        "closeAt": "2026-09-21T00:00:00+09:00",
-        "openPrecision": "day",
-        "closePrecision": "day"
-      },
-      "fees": "공고 확인",
-      "note": "접수 마감",
-      "url": "https://theplanetrun.org/",
-      "listingUrl": "https://runningon.co.kr/races/planet-run-2026",
-      "sourceName": "러닝온",
-      "curated": false,
-      "firstSeen": "2026-08-01",
-      "lastChecked": "2026-11-22",
-      "official": true
-    },
-    {
-      "id": "feed-s-runningon-co-kr-races-busan-citizen-relay-2026",
-      "name": "부산항일학생의거 86주년 기념 부산시민이어달리기",
-      "date": "2026-11-22",
-      "weekday": "일",
-      "place": "부산 구덕운동장 출발 → 초읍 부산학생교육문화회관",
-      "distances": [
-        "16km"
-      ],
-      "window": {
-        "openAt": "2026-10-13T00:00:00+09:00",
-        "closeAt": null,
-        "openPrecision": "day"
-      },
-      "fees": "0원부터",
-      "note": "오늘 대회",
-      "url": "https://i1123.org",
-      "listingUrl": "https://runningon.co.kr/races/busan-citizen-relay-2026",
-      "sourceName": "러닝온",
-      "curated": false,
-      "firstSeen": "2026-10-13",
-      "lastChecked": "2026-11-22",
-      "official": true
-    },
-    {
-      "id": "feed-s-runningon-co-kr-races-sarabong-trail-race-2026",
-      "name": "2026 TOJI X GOOBO 사라봉 트레일레이스",
-      "date": "2026-11-22",
-      "weekday": "일",
-      "place": "제주 모다드렁숲",
-      "distances": [
-        "10km"
-      ],
-      "window": {
-        "openAt": "2026-11-06T00:00:00+09:00",
-        "closeAt": "2026-11-16T00:00:00+09:00",
-        "openPrecision": "day",
-        "closePrecision": "day"
-      },
-      "fees": "50,000원부터",
-      "note": "접수 마감",
-      "url": "https://runningon.co.kr/races/sarabong-trail-race-2026",
-      "listingUrl": "https://runningon.co.kr/races/sarabong-trail-race-2026",
-      "sourceName": "러닝온",
-      "curated": false,
-      "firstSeen": "2026-11-06",
-      "lastChecked": "2026-11-22",
-      "official": false
     },
     {
       "id": "feed-ttps-runningon-co-kr-races-namwon-chunhyang-2026",
@@ -609,7 +430,7 @@
       "sourceName": "러닝온",
       "curated": false,
       "firstSeen": "2026-10-21",
-      "lastChecked": "2026-11-22",
+      "lastChecked": "2026-11-23",
       "official": true
     },
     {
@@ -634,7 +455,7 @@
       "sourceName": "러닝온",
       "curated": false,
       "firstSeen": "2026-10-12",
-      "lastChecked": "2026-11-22",
+      "lastChecked": "2026-11-23",
       "official": true
     },
     {
@@ -661,7 +482,7 @@
       "sourceName": "러닝온",
       "curated": false,
       "firstSeen": "2026-08-13",
-      "lastChecked": "2026-11-22",
+      "lastChecked": "2026-11-23",
       "official": true
     },
     {
@@ -687,7 +508,7 @@
       "sourceName": "러닝온",
       "curated": false,
       "firstSeen": "2026-08-09",
-      "lastChecked": "2026-11-22",
+      "lastChecked": "2026-11-23",
       "official": true
     },
     {
@@ -714,7 +535,7 @@
       "sourceName": "러닝온",
       "curated": false,
       "firstSeen": "2026-09-16",
-      "lastChecked": "2026-11-22",
+      "lastChecked": "2026-11-23",
       "official": true
     },
     {
@@ -735,13 +556,13 @@
         "closePrecision": "day"
       },
       "fees": "40,000원부터",
-      "note": "마감 D-5",
+      "note": "마감 D-4",
       "url": "https://seoulloverun.com/",
       "listingUrl": "https://runningon.co.kr/races/seoul-love-marathon-2026",
       "sourceName": "러닝온",
       "curated": false,
       "firstSeen": "2026-09-23",
-      "lastChecked": "2026-11-22",
+      "lastChecked": "2026-11-23",
       "official": true
     },
     {
@@ -766,7 +587,7 @@
       "sourceName": "러닝온",
       "curated": false,
       "firstSeen": "2026-09-15",
-      "lastChecked": "2026-11-22",
+      "lastChecked": "2026-11-23",
       "official": true
     },
     {
@@ -792,7 +613,7 @@
       "sourceName": "러닝온",
       "curated": false,
       "firstSeen": "2026-11-20",
-      "lastChecked": "2026-11-22",
+      "lastChecked": "2026-11-23",
       "official": true
     },
     {
@@ -818,7 +639,7 @@
       "sourceName": "러닝온",
       "curated": false,
       "firstSeen": "2026-08-01",
-      "lastChecked": "2026-11-22",
+      "lastChecked": "2026-11-23",
       "official": true
     },
     {
@@ -845,7 +666,7 @@
       "sourceName": "러닝온",
       "curated": false,
       "firstSeen": "2026-09-10",
-      "lastChecked": "2026-11-22",
+      "lastChecked": "2026-11-23",
       "official": true
     },
     {
@@ -865,13 +686,13 @@
         "closePrecision": "day"
       },
       "fees": "50,000원부터",
-      "note": "마감 D-4",
+      "note": "마감 D-3",
       "url": "https://www.hugrun.kr/",
       "listingUrl": "https://runningon.co.kr/races/hug-run-2026",
       "sourceName": "러닝온",
       "curated": false,
       "firstSeen": "2026-10-06",
-      "lastChecked": "2026-11-22",
+      "lastChecked": "2026-11-23",
       "official": true
     },
     {
@@ -897,7 +718,7 @@
       "sourceName": "러닝온",
       "curated": false,
       "firstSeen": "2026-10-26",
-      "lastChecked": "2026-11-22",
+      "lastChecked": "2026-11-23",
       "official": true
     },
     {
@@ -923,7 +744,7 @@
       "sourceName": "러닝온",
       "curated": false,
       "firstSeen": "2026-08-28",
-      "lastChecked": "2026-11-22",
+      "lastChecked": "2026-11-23",
       "official": false
     },
     {
@@ -943,13 +764,13 @@
         "closePrecision": "day"
       },
       "fees": "30,000원부터",
-      "note": "오늘 마감",
+      "note": "접수 마감",
       "url": "http://love.myrunup.kr",
       "listingUrl": "https://runningon.co.kr/races/jeongeup-gohyang-love-2026",
       "sourceName": "러닝온",
       "curated": false,
       "firstSeen": "2026-09-22",
-      "lastChecked": "2026-11-22",
+      "lastChecked": "2026-11-23",
       "official": true
     },
     {
@@ -974,7 +795,7 @@
       "sourceName": "러닝온",
       "curated": false,
       "firstSeen": "2026-10-08",
-      "lastChecked": "2026-11-22",
+      "lastChecked": "2026-11-23",
       "official": true
     },
     {
@@ -999,7 +820,7 @@
       "sourceName": "러닝온",
       "curated": false,
       "firstSeen": "2026-10-22",
-      "lastChecked": "2026-11-22",
+      "lastChecked": "2026-11-23",
       "official": true
     },
     {
@@ -1026,58 +847,185 @@
       "sourceName": "러닝온",
       "curated": false,
       "firstSeen": "2026-09-14",
-      "lastChecked": "2026-11-22",
+      "lastChecked": "2026-11-23",
       "official": true
     },
     {
-      "id": "feed-https-runfinder-kr-race-view-php-id-16008",
-      "name": "제14회 안중근 평화 마라톤",
-      "date": "2026-11-29",
+      "id": "feed-s-runningon-co-kr-races-season-end-marathon-2026",
+      "name": "2026 시즌마감마라톤대회",
+      "date": "2026-12-13",
       "weekday": "일",
-      "place": "신정교하부 육상트랙구장,",
+      "place": "인천 인천아시아드경기장 북측 광장",
       "distances": [
         "하프",
         "10km",
         "5km"
       ],
       "window": {
-        "openAt": "2026-07-31T00:00:00+09:00",
+        "openAt": "2026-10-20T00:00:00+09:00",
+        "closeAt": "2026-11-24T00:00:00+09:00",
+        "openPrecision": "day",
+        "closePrecision": "day"
+      },
+      "fees": "65,000원부터",
+      "note": "오늘 마감",
+      "url": "https://42195race.com/",
+      "listingUrl": "https://runningon.co.kr/races/season-end-marathon-2026",
+      "sourceName": "러닝온",
+      "curated": false,
+      "firstSeen": "2026-11-23",
+      "lastChecked": "2026-11-23",
+      "official": true
+    },
+    {
+      "id": "feed-nningon-co-kr-races-asan-yisunsin-run-festa-2026",
+      "name": "2026 이순신 런 페스타",
+      "date": "2026-12-13",
+      "weekday": "일",
+      "place": "충남 아산 신정호 국민관광지 야외음악당",
+      "distances": [
+        "6.4km"
+      ],
+      "window": {
+        "openAt": "2026-11-03T00:00:00+09:00",
+        "closeAt": "2026-12-03T00:00:00+09:00",
+        "openPrecision": "day",
+        "closePrecision": "day"
+      },
+      "fees": "10,000원부터",
+      "note": "접수 중",
+      "url": "https://yssmarathon.com/",
+      "listingUrl": "https://runningon.co.kr/races/asan-yisunsin-run-festa-2026",
+      "sourceName": "러닝온",
+      "curated": false,
+      "firstSeen": "2026-11-23",
+      "lastChecked": "2026-11-23",
+      "official": true
+    },
+    {
+      "id": "feed-ningon-co-kr-races-sunyang-maenmom-marathon-2027",
+      "name": "2027 선양 맨몸마라톤",
+      "date": "2027-01-01",
+      "weekday": "금",
+      "place": "대전 대전 엑스포과학공원 물빛광장(한빛탑 앞 광장)",
+      "distances": [
+        "7km"
+      ],
+      "window": {
+        "openAt": "2026-11-09T00:00:00+09:00",
         "closeAt": "2026-11-23T00:00:00+09:00",
         "openPrecision": "day",
         "closePrecision": "day"
       },
-      "fees": "공고 확인",
-      "url": "http://ajgrun.kr",
-      "listingUrl": "https://runfinder.kr/race_view.php?id=16008",
-      "sourceName": "런파인더",
+      "fees": "30,000원부터",
+      "note": "접수 마감",
+      "url": "https://www.djmmrun.co.kr/",
+      "listingUrl": "https://runningon.co.kr/races/sunyang-maenmom-marathon-2027",
+      "sourceName": "러닝온",
       "curated": false,
-      "firstSeen": "2026-07-31",
-      "lastChecked": "2026-11-22",
+      "firstSeen": "2026-11-23",
+      "lastChecked": "2026-11-23",
       "official": true
     },
     {
-      "id": "feed-https-runfinder-kr-race-view-php-id-16599",
-      "name": "제1회 정읍 고향사랑기부마라톤",
-      "date": "2026-12-06",
+      "id": "feed-on-co-kr-races-daegu-newyear-naked-marathon-2027",
+      "name": "제19회 전국새해알몸마라톤대회",
+      "date": "2027-01-03",
       "weekday": "일",
-      "place": "정읍시 내장산 단풍생태공원,",
+      "place": "대구 대구육상진흥센터 앞",
+      "distances": [
+        "10km"
+      ],
+      "window": {
+        "openAt": "2026-10-28T00:00:00+09:00",
+        "closeAt": "2026-12-11T00:00:00+09:00",
+        "openPrecision": "day",
+        "closePrecision": "day"
+      },
+      "fees": "20,000원부터",
+      "note": "접수 중",
+      "url": "http://r.dgrunner.co.kr/",
+      "listingUrl": "https://runningon.co.kr/races/daegu-newyear-naked-marathon-2027",
+      "sourceName": "러닝온",
+      "curated": false,
+      "firstSeen": "2026-11-23",
+      "lastChecked": "2026-11-23",
+      "official": true
+    },
+    {
+      "id": "feed-ngon-co-kr-races-jeonmahyeop-newyear-winter-2027",
+      "name": "2027 전마협 새해 동계 마라톤대회",
+      "date": "2027-01-10",
+      "weekday": "일",
+      "place": "충남 금산세계인삼엑스포 주차장",
+      "distances": [
+        "하프",
+        "10km",
+        "5km"
+      ],
+      "window": {
+        "openAt": "2026-10-12T00:00:00+09:00",
+        "closeAt": "2026-12-31T00:00:00+09:00",
+        "openPrecision": "day",
+        "closePrecision": "day"
+      },
+      "fees": "35,000원부터",
+      "note": "접수 중",
+      "url": "https://mara1080.com/event/2c881231-b5dd-4ae8-a587-c02d539566af",
+      "listingUrl": "https://runningon.co.kr/races/jeonmahyeop-newyear-winter-2027",
+      "sourceName": "러닝온",
+      "curated": false,
+      "firstSeen": "2026-11-23",
+      "lastChecked": "2026-11-23",
+      "official": true
+    },
+    {
+      "id": "feed-https-runningon-co-kr-races-jeju-10km-2027",
+      "name": "2027 전국마라톤협회 제주 10km 마라톤",
+      "date": "2027-01-24",
+      "weekday": "일",
+      "place": "제주 서귀포 축구공원 (예정)",
+      "distances": [
+        "10km"
+      ],
+      "window": {
+        "openAt": "2026-11-30T00:00:00+09:00",
+        "closeAt": null,
+        "openPrecision": "day"
+      },
+      "fees": "50,000원부터",
+      "note": "정원 마감",
+      "url": "https://mara1080.com/event/15658a1d-d102-42e7-8123-9e20c73aa767",
+      "listingUrl": "https://runningon.co.kr/races/jeju-10km-2027",
+      "sourceName": "러닝온",
+      "curated": false,
+      "firstSeen": "2026-11-23",
+      "lastChecked": "2026-11-23",
+      "official": true
+    },
+    {
+      "id": "feed-on-co-kr-races-daegwallyeong-naked-marathon-2027",
+      "name": "2027 평창 대관령 알몸 마라톤대회",
+      "date": "2027-01-31",
+      "weekday": "일",
+      "place": "강원 대관령눈꽃축제장",
       "distances": [
         "10km",
         "5km"
       ],
       "window": {
-        "openAt": "2026-09-22T00:00:00+09:00",
-        "closeAt": "2026-11-23T00:00:00+09:00",
-        "openPrecision": "day",
-        "closePrecision": "day"
+        "openAt": "2026-11-19T00:00:00+09:00",
+        "closeAt": null,
+        "openPrecision": "day"
       },
-      "fees": "공고 확인",
-      "url": "http://love.myrunup.kr",
-      "listingUrl": "https://runfinder.kr/race_view.php?id=16599",
-      "sourceName": "런파인더",
+      "fees": "50,000원부터",
+      "note": "접수 중(선착순)",
+      "url": "https://mara1080.com/event/d243ad5f-f193-4e72-9c7e-c46969437cf8",
+      "listingUrl": "https://runningon.co.kr/races/daegwallyeong-naked-marathon-2027",
+      "sourceName": "러닝온",
       "curated": false,
-      "firstSeen": "2026-09-22",
-      "lastChecked": "2026-11-22",
+      "firstSeen": "2026-11-23",
+      "lastChecked": "2026-11-23",
       "official": true
     },
     {
@@ -1102,7 +1050,7 @@
       "sourceName": "런파인더",
       "curated": false,
       "firstSeen": "2026-11-17",
-      "lastChecked": "2026-11-22",
+      "lastChecked": "2026-11-23",
       "official": true
     },
     {
@@ -1128,7 +1076,7 @@
       "sourceName": "런파인더",
       "curated": false,
       "firstSeen": "2026-10-20",
-      "lastChecked": "2026-11-22",
+      "lastChecked": "2026-11-23",
       "official": true
     },
     {
@@ -1154,7 +1102,7 @@
       "sourceName": "런파인더",
       "curated": false,
       "firstSeen": "2026-08-31",
-      "lastChecked": "2026-11-22",
+      "lastChecked": "2026-11-23",
       "official": true
     },
     {
@@ -1179,7 +1127,7 @@
       "sourceName": "런파인더",
       "curated": false,
       "firstSeen": "2026-08-03",
-      "lastChecked": "2026-11-22",
+      "lastChecked": "2026-11-23",
       "official": true
     },
     {
@@ -1206,7 +1154,7 @@
       "sourceName": "런파인더",
       "curated": false,
       "firstSeen": "2026-10-08",
-      "lastChecked": "2026-11-22",
+      "lastChecked": "2026-11-23",
       "official": true
     },
     {
@@ -1231,7 +1179,7 @@
       "sourceName": "런파인더",
       "curated": false,
       "firstSeen": "2026-07-31",
-      "lastChecked": "2026-11-22",
+      "lastChecked": "2026-11-23",
       "official": true
     },
     {
@@ -1257,7 +1205,7 @@
       "sourceName": "런파인더",
       "curated": false,
       "firstSeen": "2026-09-22",
-      "lastChecked": "2026-11-22",
+      "lastChecked": "2026-11-23",
       "official": true
     },
     {
@@ -1282,7 +1230,59 @@
       "sourceName": "런파인더",
       "curated": false,
       "firstSeen": "2026-09-20",
-      "lastChecked": "2026-11-22",
+      "lastChecked": "2026-11-23",
+      "official": true
+    },
+    {
+      "id": "feed-https-runfinder-kr-race-view-php-id-44186",
+      "name": "2027 경기수원국제하프마라톤",
+      "date": "2027-02-28",
+      "weekday": "일",
+      "place": "수원종합운동장,",
+      "distances": [
+        "하프",
+        "10km",
+        "5km"
+      ],
+      "window": {
+        "openAt": "2026-11-20T00:00:00+09:00",
+        "closeAt": "2026-12-01T00:00:00+09:00",
+        "openPrecision": "day",
+        "closePrecision": "day"
+      },
+      "fees": "공고 확인",
+      "url": "http://ggimarathon.com",
+      "listingUrl": "https://runfinder.kr/race_view.php?id=44186",
+      "sourceName": "런파인더",
+      "curated": false,
+      "firstSeen": "2026-11-23",
+      "lastChecked": "2026-11-23",
+      "official": true
+    },
+    {
+      "id": "feed-https-runfinder-kr-race-view-php-id-31188",
+      "name": "2027 인천k-마라톤",
+      "date": "2027-04-11",
+      "weekday": "일",
+      "place": "인천아시아드주경기장(예정),",
+      "distances": [
+        "풀",
+        "10km",
+        "5km"
+      ],
+      "window": {
+        "openAt": "2026-11-10T00:00:00+09:00",
+        "closeAt": "2026-12-01T00:00:00+09:00",
+        "openPrecision": "day",
+        "closePrecision": "day"
+      },
+      "fees": "공고 확인",
+      "url": "http://k-player.or.kr/incheon2027",
+      "listingUrl": "https://runfinder.kr/race_view.php?id=31188",
+      "sourceName": "런파인더",
+      "curated": false,
+      "firstSeen": "2026-11-23",
+      "lastChecked": "2026-11-23",
       "official": true
     }
   ]
