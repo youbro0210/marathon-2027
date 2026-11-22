@@ -21,6 +21,7 @@ export type ScheduleEvent = {
   label: string;
   kind: CalendarKind;
   distances: string[];
+  time: string | null;
 };
 
 const KIND_RANK: Record<CalendarKind, number> = { open: 0, close: 1, race: 2 };
@@ -80,6 +81,7 @@ function pushWindowEvents(events: ScheduleEvent[], race: Race, distances: string
       label: eventLabel(race.name, kind, bucket.distances, showDistances, bucket.time),
       kind,
       distances: bucket.distances,
+      time: bucket.time,
     });
   }
 }
@@ -101,6 +103,7 @@ export function scheduleEvents(races: Race[], filter: DistanceFilter = "관심")
         label: `${race.name} 대회일`,
         kind: "race",
         distances,
+        time: null,
       });
     }
   }
@@ -165,21 +168,20 @@ export function eventsInMonth(events: ScheduleEvent[], year: number, month: numb
   return events.filter((event) => event.date.startsWith(prefix));
 }
 
-export type CellRace = {
-  raceId: string;
-  shortName: string;
-  kinds: CalendarKind[];
-};
+const KIND_ORDER: CalendarKind[] = ["open", "close", "race"];
 
-export function uniqueRacesOnDay(events: ScheduleEvent[]): CellRace[] {
-  const items: CellRace[] = [];
-  for (const event of events) {
-    const existing = items.find((item) => item.raceId === event.raceId);
-    if (existing) {
-      if (!existing.kinds.includes(event.kind)) existing.kinds.push(event.kind);
-    } else {
-      items.push({ raceId: event.raceId, shortName: event.shortName, kinds: [event.kind] });
-    }
-  }
-  return items;
+export function kindsOnDay(events: ScheduleEvent[]): CalendarKind[] {
+  const seen = new Set(events.map((event) => event.kind));
+  return KIND_ORDER.filter((kind) => seen.has(kind));
+}
+
+export function defaultSelectedDate(
+  events: ScheduleEvent[],
+  year: number,
+  month: number,
+  today: { year: number; month: number; ymd: string },
+): string {
+  if (year === today.year && month === today.month) return today.ymd;
+  const first = eventsInMonth(events, year, month)[0];
+  return first?.date ?? isoDate(year, month, 1);
 }

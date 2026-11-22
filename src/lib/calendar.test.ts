@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import { curatedRaces } from "@/data/curated";
 import {
   boundTimeLabel,
+  defaultSelectedDate,
   eventMonthRange,
   monthIndex,
   scheduleEvents,
@@ -53,5 +54,13 @@ describe("schedule calendar events", () => {
   it("shortens numbered and year-prefixed race names", () => {
     expect(shortRaceName("제14회 안중근 평화 마라톤 대회")).toBe("안중근 평화 마라톤 대회");
     expect(shortRaceName("2026 평화의숲 마라톤")).toBe("평화의숲 마라톤");
+  });
+
+  it("defaults to today in the current month, otherwise the first event day", () => {
+    const events = scheduleEvents(curatedRaces, "관심");
+    const today = { year: 2026, month: 11, ymd: "2026-11-22" };
+    expect(defaultSelectedDate(events, 2026, 11, today)).toBe("2026-11-22");
+    expect(defaultSelectedDate(events, 2026, 12, today)).toBe("2026-12-01");
+    expect(defaultSelectedDate(events, 2027, 3, today)).toBe("2027-03-01");
   });
 });

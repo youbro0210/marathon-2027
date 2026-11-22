@@ -4,18 +4,18 @@ import {
   type CalendarKind,
   type ScheduleEvent,
   WEEKDAYS,
+  defaultSelectedDate,
   eventMonthRange,
-  eventsInMonth,
   eventsOnDate,
   fromMonthIndex,
+  kindsOnDay,
   monthIndex,
   scheduleEvents,
   seoulTodayParts,
-  uniqueRacesOnDay,
   weeksOf,
 } from "@/lib/calendar";
-import type { DistanceFilter } from "@/lib/windows";
-import { isoDate } from "@/lib/windows";
+import { type DistanceFilter, hostOf } from "@/lib/windows";
+import { OfficialLink } from "@/components/OfficialLink";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -31,14 +31,8 @@ const kindChip: Record<CalendarKind, string> = {
   race: "bg-[#dbeafe] text-[#1e3a8a]",
 };
 
-const kindText: Record<CalendarKind, string> = {
-  open: "text-[#9a3412]",
-  close: "text-[#1a1d23]",
-  race: "text-[#1e3a8a]",
-};
-
-const kindWord: Record<CalendarKind, string> = {
-  open: "오픈",
+const kindTitle: Record<CalendarKind, string> = {
+  open: "접수 시작",
   close: "마감",
   race: "대회일",
 };
@@ -56,7 +50,8 @@ export function ScheduleCalendar({ races, now }: { races: Race[]; now: Date }) {
   const today = seoulTodayParts(now);
   const [distance, setDistance] = useState<DistanceFilter>("관심");
   const [cursor, setCursor] = useState({ year: today.year, month: today.month });
-  const [selected, setSelected] = useState<string | null>(today.ymd);
+  const [selected, setSelected] = useState(today.ymd);
+  const raceMap = useMemo(() => new Map(races.map((race) => [race.id, race])), [races]);
 
   const events = useMemo(() => scheduleEvents(races, distance), [races, distance]);
   const range = useMemo(() => eventMonthRange(events, now), [events, now]);
@@ -64,22 +59,11 @@ export function ScheduleCalendar({ races, now }: { races: Race[]; now: Date }) {
   const canPrev = currentIndex > range.min;
   const canNext = currentIndex < range.max;
   const weeks = weeksOf(cursor.year, cursor.month);
-  const monthEvents = eventsInMonth(events, cursor.year, cursor.month);
-  const selectedEvents = selected ? eventsOnDate(events, selected) : [];
-  const list = selected ? selectedEvents : monthEvents;
-  const selectedInMonth = selected?.startsWith(`${isoDate(cursor.year, cursor.month, 1).slice(0, 7)}-`);
+  const dayEvents = eventsOnDate(events, selected);
 
-  function goTo(year: number, month: number, selectToday = false) {
+  function goTo(year: number, month: number) {
     setCursor({ year, month });
-    if (selectToday && year === today.year && month === today.month) {
-      setSelected(today.ymd);
-    } else {
-      setSelected(null);
-    }
-  }
-
-  function goToday() {
-    goTo(today.year, today.month, true);
+    setSelected(defaultSelectedDate(events, year, month, today));
   }
 
   function shift(delta: number) {
@@ -87,63 +71,44 @@ export function ScheduleCalendar({ races, now }: { races: Race[]; now: Date }) {
     goTo(next.year, next.month);
   }
 
-  function toggleDay(date: string) {
-    setSelected((current) => (current === date ? null : date));
-  }
-
   return (
-    <section aria-labelledby="calendar-heading" className="overflow-x-hidden rounded-2xl border border-[#767d89] bg-white p-4 sm:p-6">
-      <div className="flex flex-wrap items-end justify-between gap-3">
-        <div className="min-w-0">
-          <h2 id="calendar-heading" className="text-lg font-extrabold tracking-tight">
-            접수 일정 달력
-          </h2>
-          <p className="mt-1 text-base text-[#3f4754]">오픈, 마감, 대회일을 표시합니다. 날짜를 누르면 그날 일정을 볼 수 있습니다.</p>
-        </div>
-        <ul className="flex flex-wrap gap-x-3 gap-y-1 text-xs text-[#3f4754]">
-          <li className="inline-flex items-center gap-1.5">
-            <span className="size-1.5 rounded-full bg-[#9a3412]" /> 오픈
-          </li>
-          <li className="inline-flex items-center gap-1.5">
-            <span className="size-1.5 rounded-full bg-[#1a1d23]" /> 마감
-          </li>
-          <li className="inline-flex items-center gap-1.5">
-            <span className="size-1.5 rounded-full bg-[#1e3a8a]" /> 대회일
-          </li>
-        </ul>
-      </div>
-
-      <div className="mt-4 flex flex-wrap items-center gap-2">
-        <div className="flex min-w-0 flex-wrap items-center gap-2">
-          <Button
-            type="button"
-            variant="outline"
-            className="h-11 px-3 text-[15px]"
-            disabled={!canPrev}
-            onClick={() => shift(-1)}
-          >
-            ◀ 이전 달
-          </Button>
-          <Button type="button" variant="outline" className="h-11 px-3 text-[15px]" onClick={goToday}>
-            오늘
-          </Button>
-          <Button
-            type="button"
-            variant="outline"
-            className="h-11 px-3 text-[15px]"
-            disabled={!canNext}
-            onClick={() => shift(1)}
-          >
-            다음 달 ▶
-          </Button>
-        </div>
-        <p className="min-w-0 text-lg font-extrabold tracking-tight sm:ml-auto sm:text-xl">
-          {formatMonth(cursor.year, cursor.month)}
+    <section aria-labelledby="calendar-heading" className="overflow-x-hidden rounded-2xl border border-[#767d89] bg-white p-3 sm:p-6">
+      <div className="min-w-0">
+        <h2 id="calendar-heading" className="text-lg font-extrabold tracking-tight sm:text-xl">
+          접수 일정 달력
+        </h2>
+        <p className="mt-1 text-base leading-relaxed text-[#3f4754]">
+          날짜를 누르면 그날의 접수 시작, 마감, 대회일을 볼 수 있습니다.
         </p>
       </div>
 
+      <ul className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-base text-[#3f4754]">
+        <li className="inline-flex items-center gap-1.5">
+          <span className="size-2.5 rounded-full bg-[#9a3412]" /> 접수 시작
+        </li>
+        <li className="inline-flex items-center gap-1.5">
+          <span className="size-2.5 rounded-full bg-[#1a1d23]" /> 마감
+        </li>
+        <li className="inline-flex items-center gap-1.5">
+          <span className="size-2.5 rounded-full bg-[#1e3a8a]" /> 대회일
+        </li>
+      </ul>
+
+      <div className="mt-4 flex flex-wrap items-center gap-2">
+        <Button type="button" variant="outline" className="h-11 px-3 text-base" disabled={!canPrev} onClick={() => shift(-1)}>
+          ◀ 이전 달
+        </Button>
+        <Button type="button" variant="outline" className="h-11 px-3 text-base" onClick={() => goTo(today.year, today.month)}>
+          오늘
+        </Button>
+        <Button type="button" variant="outline" className="h-11 px-3 text-base" disabled={!canNext} onClick={() => shift(1)}>
+          다음 달 ▶
+        </Button>
+      </div>
+      <p className="mt-3 text-center text-xl font-extrabold tracking-tight">{formatMonth(cursor.year, cursor.month)}</p>
+
       <div role="group" aria-label="거리" className="mt-3 flex flex-wrap items-center gap-2">
-        <span className="shrink-0 text-[15px] font-bold text-[#3f4754]">거리</span>
+        <span className="shrink-0 text-base font-bold text-[#3f4754]">거리</span>
         {(["관심", "전체"] as const).map((option) => {
           const selectedFilter = option === distance;
           return (
@@ -152,152 +117,137 @@ export function ScheduleCalendar({ races, now }: { races: Race[]; now: Date }) {
               type="button"
               variant={selectedFilter ? "default" : "outline"}
               aria-pressed={selectedFilter}
-              className="h-11 px-3.5 text-[15px]"
+              className="h-11 px-3.5 text-base"
               onClick={() => setDistance(option)}
             >
-              {option === "관심" ? "관심(하프·10km·5km)" : "전체"}
+              {option === "관심" ? "관심 종목" : "전체"}
             </Button>
           );
         })}
       </div>
+      <p className="mt-1 text-base text-[#3f4754]">관심 종목은 하프·10km·5km입니다.</p>
 
-      <div className="mt-5 grid min-w-0 gap-6 md:grid-cols-[minmax(0,1.15fr)_minmax(16rem,0.85fr)] md:items-start">
-        <table className="w-full min-w-0 table-fixed border-separate border-spacing-1 text-center">
-          <caption className="sr-only">{formatMonth(cursor.year, cursor.month)} 달력</caption>
-          <thead>
-            <tr>
-              {WEEKDAYS.map((weekday) => (
-                <th
-                  key={weekday}
-                  scope="col"
-                  className={cn(
-                    "pb-1 text-sm font-semibold",
-                    weekday === "일" && "text-[#9a3412]",
-                    weekday === "토" && "text-[#2f5d86]",
-                    weekday !== "일" && weekday !== "토" && "text-[#3f4754]",
-                  )}
-                >
-                  {weekday}
-                </th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {weeks.map((week, weekIndex) => (
-              <tr key={weekIndex}>
-                {week.map((day, dayIndex) => {
-                  if (day === null) {
-                    return <td key={`${weekIndex}-${dayIndex}`} className="min-w-0" />;
-                  }
-                  const date = isoDate(cursor.year, cursor.month, day);
-                  const dayEvents = eventsOnDate(events, date);
-                  const racesOnDay = uniqueRacesOnDay(dayEvents);
-                  const isToday = date === today.ymd;
-                  const isSelected = date === selected;
-                  const visibleLimit = 2;
-                  const visible = racesOnDay.slice(0, visibleLimit);
-                  const extra = racesOnDay.length - visible.length;
-                  const label =
-                    dayEvents.length > 0
-                      ? `${cursor.month}월 ${day}일 ${WEEKDAYS[dayIndex]}. ${dayEvents.map((event) => event.label).join(". ")}`
-                      : `${cursor.month}월 ${day}일`;
-                  return (
-                    <td key={day} className="min-w-0 p-0 align-top">
-                      <button
-                        type="button"
-                        aria-label={label}
-                        aria-pressed={isSelected}
-                        aria-current={isToday ? "date" : undefined}
-                        onClick={() => toggleDay(date)}
+      <table className="mt-4 w-full min-w-0 table-fixed border-collapse">
+        <caption className="sr-only">{formatMonth(cursor.year, cursor.month)} 달력</caption>
+        <thead>
+          <tr>
+            {WEEKDAYS.map((weekday) => (
+              <th
+                key={weekday}
+                scope="col"
+                className={cn(
+                  "border border-[#767d89] bg-[#f8fafc] py-2 text-base font-bold",
+                  weekday === "일" && "text-[#9a3412]",
+                  weekday === "토" && "text-[#2f5d86]",
+                  weekday !== "일" && weekday !== "토" && "text-[#3f4754]",
+                )}
+              >
+                {weekday}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {weeks.map((week, weekIndex) => (
+            <tr key={weekIndex}>
+              {week.map((day, dayIndex) => {
+                if (day === null) {
+                  return <td key={`${weekIndex}-${dayIndex}`} className="min-w-0 border border-[#d5d8de] bg-[#f8fafc]" />;
+                }
+                const date = `${cursor.year}-${String(cursor.month).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+                const kinds = kindsOnDay(eventsOnDate(events, date));
+                const isToday = date === today.ymd;
+                const isSelected = date === selected;
+                const weekday = WEEKDAYS[dayIndex];
+                const label =
+                  kinds.length > 0
+                    ? `${cursor.month}월 ${day}일 ${weekday}. ${kinds.map((kind) => kindTitle[kind]).join(", ")}`
+                    : `${cursor.month}월 ${day}일`;
+                return (
+                  <td key={day} className="min-w-0 border border-[#767d89] p-0">
+                    <button
+                      type="button"
+                      aria-label={label}
+                      aria-pressed={isSelected}
+                      aria-current={isToday ? "date" : undefined}
+                      onClick={() => setSelected(date)}
+                      className={cn(
+                        "flex min-h-11 w-full min-w-0 flex-col items-center justify-center px-0.5 py-1.5",
+                        isSelected && "bg-[#ffedd5]",
+                        !isSelected && kinds.length > 0 && "bg-[#fff7ed]",
+                        isToday && !isSelected && "bg-[#eff6ff]",
+                        isToday && "shadow-[inset_0_0_0_2px_#1d4ed8]",
+                        isSelected && "shadow-[inset_0_0_0_2px_#9a3412]",
+                      )}
+                    >
+                      <span
                         className={cn(
-                          "flex h-[4.75rem] w-full min-w-0 flex-col items-stretch rounded-md px-0.5 py-1 text-left sm:h-[5.75rem] sm:px-1",
-                          dayEvents.length > 0 ? "bg-[#fff7ed] text-[#1a1d23]" : "text-[#1a1d23]",
-                          isToday && "ring-2 ring-[#1d4ed8] ring-inset",
-                          isSelected && "bg-[#ffedd5] font-semibold ring-2 ring-[#9a3412] ring-inset",
+                          "text-lg leading-none font-bold",
+                          weekday === "일" && "text-[#9a3412]",
+                          weekday === "토" && "text-[#2f5d86]",
+                          weekday !== "일" && weekday !== "토" && "text-[#1a1d23]",
                         )}
                       >
-                        <span className={cn("font-mono text-sm leading-none", isToday && "font-extrabold")}>{day}</span>
-                        <span className="mt-1 flex min-w-0 flex-col gap-0.5" aria-hidden="true">
-                          {visible.map((item) => (
-                            <span key={item.raceId} className="flex min-w-0 items-center gap-0.5">
-                              <span className="flex shrink-0 gap-px">
-                                {item.kinds.map((kind) => (
-                                  <span key={kind} className={cn("size-1 rounded-full sm:size-1.5", kindDot[kind])} />
-                                ))}
-                              </span>
-                              <span className="min-w-0 truncate text-[9px] leading-tight font-medium sm:text-[10px]">
-                                {item.shortName}
-                              </span>
-                            </span>
-                          ))}
-                          {extra > 0 ? (
-                            <span className="truncate text-[9px] leading-tight font-bold text-[#3f4754] sm:text-[10px]">
-                              +{extra}개
-                            </span>
-                          ) : null}
-                        </span>
-                      </button>
-                    </td>
-                  );
-                })}
-              </tr>
-            ))}
-          </tbody>
-        </table>
+                        {day}
+                      </span>
+                      <span className="mt-1 flex h-2.5 items-center justify-center gap-0.5" aria-hidden="true">
+                        {kinds.map((kind) => (
+                          <span key={kind} className={cn("size-2 rounded-full", kindDot[kind])} />
+                        ))}
+                      </span>
+                    </button>
+                  </td>
+                );
+              })}
+            </tr>
+          ))}
+        </tbody>
+      </table>
 
-        <div className="min-w-0">
-          <div className="flex flex-wrap items-baseline justify-between gap-2">
-            <h3 className="text-base font-extrabold">
-              {selected && selectedInMonth
-                ? `${Number(selected.slice(5, 7))}월 ${Number(selected.slice(8, 10))}일 (${weekdayOf(selected)})`
-                : `${cursor.month}월 전체`}
-            </h3>
-            {selected && selectedInMonth ? (
-              <Button type="button" variant="ghost" className="h-9 px-2 text-[15px]" onClick={() => setSelected(null)}>
-                이달 전체
-              </Button>
-            ) : (
-              <p className="text-[15px] text-[#3f4754]">{monthEvents.length}건</p>
-            )}
-          </div>
-          {list.length === 0 ? (
-            <p className="mt-3 rounded-xl border border-dashed border-[#767d89] px-3 py-8 text-center text-base text-[#3f4754]">
-              {selected && selectedInMonth ? "이 날 일정이 없습니다." : "이달에 표시할 일정이 없습니다."}
-            </p>
-          ) : (
-            <ol className="mt-1 max-h-[28rem] divide-y divide-[#767d89] overflow-y-auto border-y border-[#767d89]">
-              {list.map((event) => (
-                <DayEventItem key={event.id} event={event} selected={Boolean(selected && selectedInMonth)} />
-              ))}
-            </ol>
-          )}
-        </div>
+      <div className="mt-5 min-w-0">
+        <h3 className="text-lg font-extrabold tracking-tight">
+          {Number(selected.slice(5, 7))}월 {Number(selected.slice(8, 10))}일 ({weekdayOf(selected)})
+          {selected === today.ymd ? " · 오늘" : ""}
+        </h3>
+        {dayEvents.length === 0 ? (
+          <p className="mt-3 rounded-2xl border border-dashed border-[#767d89] px-4 py-8 text-center text-base text-[#3f4754]">
+            이 날 일정이 없습니다.
+          </p>
+        ) : (
+          <ul className="mt-3 grid gap-3">
+            {dayEvents.map((event) => (
+              <DayCard key={event.id} event={event} race={raceMap.get(event.raceId)} />
+            ))}
+          </ul>
+        )}
       </div>
     </section>
   );
 }
 
-function DayEventItem({ event, selected }: { event: ScheduleEvent; selected: boolean }) {
-  const dateLabel = selected
-    ? null
-    : `${Number(event.date.slice(5, 7))}/${Number(event.date.slice(8, 10))}`;
+function DayCard({ event, race }: { event: ScheduleEvent; race: Race | undefined }) {
+  const timeText =
+    event.kind === "race" ? "대회 당일" : event.time ? event.time : "시각 미상";
   return (
-    <li className="py-2.5">
-      <a href={`#race-${event.raceId}`} className="flex min-w-0 items-baseline gap-3 rounded-md hover:bg-[#f8fafc]">
-        <span className="w-16 shrink-0 font-mono text-xs text-[#3f4754]">
-          {dateLabel ? (
-            <>
-              {dateLabel}
-              <span className="ml-1 font-sans">{weekdayOf(event.date)}</span>
-            </>
-          ) : (
-            <span className={cn("rounded-full px-2 py-0.5 font-sans text-[11px] font-bold", kindChip[event.kind])}>
-              {kindWord[event.kind]}
-            </span>
-          )}
-        </span>
-        <span className={cn("min-w-0 text-sm leading-snug font-medium", kindText[event.kind])}>{event.label}</span>
-      </a>
+    <li>
+      <article className="rounded-2xl border border-[#767d89] bg-white p-4">
+        <p className={cn("inline-flex rounded-full px-2.5 py-1 text-base font-bold", kindChip[event.kind])}>
+          {kindTitle[event.kind]}
+        </p>
+        <h4 className="mt-2 text-xl leading-tight font-extrabold tracking-tight text-[#1a1d23]">{event.raceName}</h4>
+        <dl className="mt-3 grid grid-cols-[4.5rem_minmax(0,1fr)] gap-x-3 gap-y-2 text-base">
+          <dt className="text-[#3f4754]">시각</dt>
+          <dd className="font-semibold">{timeText}</dd>
+          <dt className="text-[#3f4754]">종목</dt>
+          <dd>{event.distances.join(" · ")}</dd>
+        </dl>
+        {race ? (
+          <div className="mt-4 flex flex-col items-start gap-1.5">
+            <OfficialLink href={race.url} name={race.name} official={race.official} className="w-full sm:w-auto" />
+            <p className="text-base text-[#3f4754]">{hostOf(race.url)}</p>
+          </div>
+        ) : null}
+      </article>
     </li>
   );
 }
