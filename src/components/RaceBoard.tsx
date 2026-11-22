@@ -150,7 +150,7 @@ export function RaceBoard({ races, now }: { races: Race[]; now: Date }) {
 
   return (
     <section aria-labelledby="board-heading">
-      <div className="sticky top-0 z-20 -mx-4 border-b border-[#767d89] bg-white/95 px-4 py-3 backdrop-blur-md sm:mx-0 sm:rounded-2xl sm:border sm:px-4">
+      <div className="relative -mx-4 border-b border-[#767d89] bg-white px-4 py-3 sm:mx-0 sm:rounded-2xl sm:border sm:px-4">
         <div className="flex flex-wrap items-end justify-between gap-2">
           <h2 id="board-heading" className="text-xl font-extrabold tracking-tight">
             대회 목록
