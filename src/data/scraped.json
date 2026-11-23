@@ -1,5 +1,5 @@
 {
-  "collectedAt": "2026-11-22T19:11:42.695Z",
+  "collectedAt": "2026-11-23T06:18:33.140Z",
   "sources": [
     {
       "name": "러닝온",
@@ -39,6 +39,85 @@
     }
   ],
   "races": [
+    {
+      "id": "feed-ningon-co-kr-races-sunyang-maenmom-marathon-2027",
+      "name": "2027 선양 맨몸마라톤",
+      "date": "2027-01-01",
+      "weekday": "금",
+      "place": "대전 대전 엑스포과학공원 물빛광장(한빛탑 앞 광장)",
+      "distances": [
+        "7km"
+      ],
+      "window": {
+        "openAt": "2026-11-09T00:00:00+09:00",
+        "closeAt": "2026-11-23T00:00:00+09:00",
+        "openPrecision": "day",
+        "closePrecision": "day"
+      },
+      "fees": "30,000원부터",
+      "note": "접수 마감",
+      "url": "https://www.djmmrun.co.kr/",
+      "listingUrl": "https://runningon.co.kr/races/sunyang-maenmom-marathon-2027",
+      "sourceName": "러닝온",
+      "curated": false,
+      "firstSeen": "2026-11-23",
+      "lastChecked": "2026-11-23",
+      "official": true
+    },
+    {
+      "id": "feed-https-runningon-co-kr-races-winter-marathon-2027",
+      "name": "희망드림 제24회 동계국제마라톤대회",
+      "date": "2027-02-27",
+      "weekday": "토",
+      "place": "서울 여의도 한강공원 물빛광장",
+      "distances": [
+        "32.195km",
+        "하프",
+        "10km",
+        "5km"
+      ],
+      "window": {
+        "openAt": "2026-11-23T00:00:00+09:00",
+        "closeAt": null,
+        "openPrecision": "day"
+      },
+      "fees": "40,000원부터",
+      "note": "접수 중(선착순)",
+      "url": "https://dkrun.co.kr/",
+      "listingUrl": "https://runningon.co.kr/races/winter-marathon-2027",
+      "sourceName": "러닝온",
+      "curated": false,
+      "firstSeen": "2026-11-23",
+      "lastChecked": "2026-11-23",
+      "official": true
+    },
+    {
+      "id": "feed-https-runningon-co-kr-races-daegu-marathon-2027",
+      "name": "2027 대구마라톤",
+      "date": "2027-02-28",
+      "weekday": "일",
+      "place": "대구 국채보상공원 및 시내 일원",
+      "distances": [
+        "풀",
+        "10km",
+        "5km"
+      ],
+      "window": {
+        "openAt": "2026-11-23T00:00:00+09:00",
+        "closeAt": "2026-12-02T00:00:00+09:00",
+        "openPrecision": "day",
+        "closePrecision": "day"
+      },
+      "fees": "30,000원부터",
+      "note": "오늘 10:00 오픈",
+      "url": "https://daegumarathon.daegu.go.kr/",
+      "listingUrl": "https://runningon.co.kr/races/daegu-marathon-2027",
+      "sourceName": "러닝온",
+      "curated": false,
+      "firstSeen": "2026-11-23",
+      "lastChecked": "2026-11-23",
+      "official": true
+    },
     {
       "id": "feed-gon-co-kr-races-ahn-junggeun-peace-marathon-2026",
       "name": "제14회 안중근 평화 마라톤 대회",
@@ -903,31 +982,6 @@
       "official": true
     },
     {
-      "id": "feed-ningon-co-kr-races-sunyang-maenmom-marathon-2027",
-      "name": "2027 선양 맨몸마라톤",
-      "date": "2027-01-01",
-      "weekday": "금",
-      "place": "대전 대전 엑스포과학공원 물빛광장(한빛탑 앞 광장)",
-      "distances": [
-        "7km"
-      ],
-      "window": {
-        "openAt": "2026-11-09T00:00:00+09:00",
-        "closeAt": "2026-11-23T00:00:00+09:00",
-        "openPrecision": "day",
-        "closePrecision": "day"
-      },
-      "fees": "30,000원부터",
-      "note": "접수 마감",
-      "url": "https://www.djmmrun.co.kr/",
-      "listingUrl": "https://runningon.co.kr/races/sunyang-maenmom-marathon-2027",
-      "sourceName": "러닝온",
-      "curated": false,
-      "firstSeen": "2026-11-23",
-      "lastChecked": "2026-11-23",
-      "official": true
-    },
-    {
       "id": "feed-on-co-kr-races-daegu-newyear-naked-marathon-2027",
       "name": "제19회 전국새해알몸마라톤대회",
       "date": "2027-01-03",
@@ -973,55 +1027,6 @@
       "note": "접수 중",
       "url": "https://mara1080.com/event/2c881231-b5dd-4ae8-a587-c02d539566af",
       "listingUrl": "https://runningon.co.kr/races/jeonmahyeop-newyear-winter-2027",
-      "sourceName": "러닝온",
-      "curated": false,
-      "firstSeen": "2026-11-23",
-      "lastChecked": "2026-11-23",
-      "official": true
-    },
-    {
-      "id": "feed-https-runningon-co-kr-races-jeju-10km-2027",
-      "name": "2027 전국마라톤협회 제주 10km 마라톤",
-      "date": "2027-01-24",
-      "weekday": "일",
-      "place": "제주 서귀포 축구공원 (예정)",
-      "distances": [
-        "10km"
-      ],
-      "window": {
-        "openAt": "2026-11-30T00:00:00+09:00",
-        "closeAt": null,
-        "openPrecision": "day"
-      },
-      "fees": "50,000원부터",
-      "note": "정원 마감",
-      "url": "https://mara1080.com/event/15658a1d-d102-42e7-8123-9e20c73aa767",
-      "listingUrl": "https://runningon.co.kr/races/jeju-10km-2027",
-      "sourceName": "러닝온",
-      "curated": false,
-      "firstSeen": "2026-11-23",
-      "lastChecked": "2026-11-23",
-      "official": true
-    },
-    {
-      "id": "feed-on-co-kr-races-daegwallyeong-naked-marathon-2027",
-      "name": "2027 평창 대관령 알몸 마라톤대회",
-      "date": "2027-01-31",
-      "weekday": "일",
-      "place": "강원 대관령눈꽃축제장",
-      "distances": [
-        "10km",
-        "5km"
-      ],
-      "window": {
-        "openAt": "2026-11-19T00:00:00+09:00",
-        "closeAt": null,
-        "openPrecision": "day"
-      },
-      "fees": "50,000원부터",
-      "note": "접수 중(선착순)",
-      "url": "https://mara1080.com/event/d243ad5f-f193-4e72-9c7e-c46969437cf8",
-      "listingUrl": "https://runningon.co.kr/races/daegwallyeong-naked-marathon-2027",
       "sourceName": "러닝온",
       "curated": false,
       "firstSeen": "2026-11-23",
