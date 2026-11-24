@@ -1,5 +1,5 @@
 {
-  "collectedAt": "2026-11-23T23:33:13.748Z",
+  "collectedAt": "2026-11-24T08:53:32.201Z",
   "sources": [
     {
       "name": "러닝온",
@@ -1164,6 +1164,57 @@
       "official": true
     },
     {
+      "id": "feed-https-runfinder-kr-race-view-php-id-50778",
+      "name": "2026 오크밸리 윈터 하프 마라톤",
+      "date": "2026-12-05",
+      "weekday": "토",
+      "place": "오크밸리리조트 밸리CC (강원 원주시),",
+      "distances": [
+        "하프",
+        "10km",
+        "5km"
+      ],
+      "window": {
+        "openAt": "2026-09-11T00:00:00+09:00",
+        "closeAt": "2026-11-30T00:00:00+09:00",
+        "openPrecision": "day",
+        "closePrecision": "day"
+      },
+      "fees": "공고 확인",
+      "url": "https://cltoo.com/ko/product/341",
+      "listingUrl": "https://runfinder.kr/race_view.php?id=50778",
+      "sourceName": "런파인더",
+      "curated": false,
+      "firstSeen": "2026-11-24",
+      "lastChecked": "2026-11-24",
+      "official": true
+    },
+    {
+      "id": "feed-https-runfinder-kr-race-view-php-id-16602",
+      "name": "2026 황영조 로드레이스",
+      "date": "2026-12-06",
+      "weekday": "일",
+      "place": "정서진 아라타워,",
+      "distances": [
+        "하프",
+        "10km"
+      ],
+      "window": {
+        "openAt": "2026-08-14T00:00:00+09:00",
+        "closeAt": "2026-12-01T00:00:00+09:00",
+        "openPrecision": "day",
+        "closePrecision": "day"
+      },
+      "fees": "공고 확인",
+      "url": "http://roadracing.co.kr/",
+      "listingUrl": "https://runfinder.kr/race_view.php?id=16602",
+      "sourceName": "런파인더",
+      "curated": false,
+      "firstSeen": "2026-11-24",
+      "lastChecked": "2026-11-24",
+      "official": true
+    },
+    {
       "id": "feed-https-runfinder-kr-race-view-php-id-16617",
       "name": "2026 슬로우런마라톤(a.k.a. 동계훈련)",
       "date": "2026-12-20",
@@ -1237,55 +1288,6 @@
       "sourceName": "런파인더",
       "curated": false,
       "firstSeen": "2026-11-23",
-      "lastChecked": "2026-11-24",
-      "official": true
-    },
-    {
-      "id": "feed-https-runfinder-kr-race-view-php-id-16604",
-      "name": "제6회 2026 청춘런",
-      "date": "2026-12-06",
-      "weekday": "일",
-      "place": "상암동 평화의공원 평화광장,",
-      "distances": [
-        "10km",
-        "5km"
-      ],
-      "window": {
-        "openAt": "2026-09-09T00:00:00+09:00",
-        "closeAt": "2026-12-02T00:00:00+09:00",
-        "openPrecision": "day",
-        "closePrecision": "day"
-      },
-      "fees": "공고 확인",
-      "url": "http://www.youthrun.co.kr",
-      "listingUrl": "https://runfinder.kr/race_view.php?id=16604",
-      "sourceName": "런파인더",
-      "curated": false,
-      "firstSeen": "2026-11-24",
-      "lastChecked": "2026-11-24",
-      "official": true
-    },
-    {
-      "id": "feed-https-runfinder-kr-race-view-php-id-23507",
-      "name": "2026이순신런페스타",
-      "date": "2026-12-13",
-      "weekday": "일",
-      "place": "아산신정호국민관광지야외음악당,",
-      "distances": [
-        "6.4km"
-      ],
-      "window": {
-        "openAt": "2026-11-03T00:00:00+09:00",
-        "closeAt": "2026-12-03T00:00:00+09:00",
-        "openPrecision": "day",
-        "closePrecision": "day"
-      },
-      "fees": "공고 확인",
-      "url": "http://yssmarathon.com",
-      "listingUrl": "https://runfinder.kr/race_view.php?id=23507",
-      "sourceName": "런파인더",
-      "curated": false,
-      "firstSeen": "2026-11-24",
       "lastChecked": "2026-11-24",
       "official": true
     }
